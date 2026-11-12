@@ -1,0 +1,40 @@
+# Django & REST Framework
+Django==5.0.1
+djangorestframework==3.14.0
+djangorestframework-simplejwt==5.3.1
+django-cors-headers==4.3.1
+django-filter==23.5
+
+# Server
+gunicorn==21.2.0
+whitenoise==6.6.0
+
+# Multi-agent orchestration
+# LangGraph installs its compatible langchain-core dependency transitively.
+# The application does not directly import langchain or langchain-community.
+langgraph==0.0.26
+
+# Google Gemini
+google-generativeai==0.3.2
+
+# Vector Store & Embeddings
+# CPU-only torch keeps the image small enough for free-tier hosts (avoids ~2GB CUDA libs)
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.1.2+cpu
+chromadb==0.4.22
+sentence-transformers==2.3.1
+
+# Data Processing
+beautifulsoup4==4.12.2
+requests==2.31.0
+numpy==1.26.3
+
+# Utilities
+python-dotenv==1.0.0
+dj-database-url==2.1.0
+redis==5.0.1
+psycopg2-binary==2.9.9
+
+# Evaluation
+scikit-learn==1.4.0
+rouge-score==0.1.2

@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: auto; }
+  body { @apply font-sans antialiased; }
+  ::selection { background: #FFE27A; color: #14192B; }
+  :focus-visible { @apply outline-2 outline-offset-2 outline-brand; outline-style: solid; }
+  ::-webkit-scrollbar { @apply w-2 h-2; }
+  ::-webkit-scrollbar-thumb { @apply bg-line rounded-full; }
+}
+
+@layer components {
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed; }
+  .btn-primary { @apply btn bg-brand text-white hover:bg-brand-dark; }
+  .btn-ghost { @apply btn border border-line bg-paper-raised text-ink hover:bg-paper-sunk; }
+  .field { @apply w-full rounded-lg border border-line bg-paper-raised px-3.5 py-2.5 text-sm text-ink placeholder:text-ink-faint transition-shadow focus:border-brand focus:outline-none focus:ring-4 focus:ring-brand/10; }
+  .label { @apply mb-1.5 block text-sm font-medium text-ink; }
+  .panel { @apply rounded-2xl border border-line bg-paper-raised shadow-lift; }
+  .grid-paper { background-image: linear-gradient(#E1E5EC 1px, transparent 1px), linear-gradient(90deg, #E1E5EC 1px, transparent 1px); background-size: 32px 32px; background-position: -1px -1px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
